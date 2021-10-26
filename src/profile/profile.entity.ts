@@ -12,10 +12,13 @@ export class Profile extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: false, type: 'varchar', length: 20 })
+  plan: string;
+
+  @Column({ nullable: false, type: 'varchar', length: 50 })
   favouriteGenre: string;
 
-  @Column()
+  @Column({ nullable: true, type: 'varchar', length: 300 })
   preferenceGenres: string;
 
   @CreateDateColumn()
