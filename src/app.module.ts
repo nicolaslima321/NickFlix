@@ -12,10 +12,10 @@ import { typeOrmConfig } from './database/typeorm.config';
 
 // Models Modules
 import { UsersModule } from './user/users.module';
-import { ProfileModule } from './profile/profile.module';
+import { ProfilesModule } from './profile/profiles.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(typeOrmConfig), UsersModule, ProfileModule],
+  imports: [TypeOrmModule.forRoot(typeOrmConfig), UsersModule, ProfilesModule],
   controllers: [AppController],
   providers: [AppService],
 })
