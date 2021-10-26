@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 
 // Controllers
 import { AppController } from './app.controller';
+import { UserController } from './user/user.controller';
+import { ProfileController } from './profile/profile.controller';
 
 // Services
 import { AppService } from './app.service';
@@ -16,7 +18,7 @@ import { ProfilesModule } from './profile/profiles.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot(typeOrmConfig), UsersModule, ProfilesModule],
-  controllers: [AppController],
+  controllers: [AppController, UserController, ProfileController],
   providers: [AppService],
 })
 export class AppModule {}
