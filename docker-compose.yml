@@ -12,6 +12,25 @@ services:
     environment:
       POSTGRES_USER: pguser
       POSTGRES_PASSWORD: pgpassword
+    networks:
+    - container-network
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    container_name: 'pgadmin4'
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "nicolas.pedroso2145@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "12345678"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres
+    networks:
+      - container-network
+
+networks:
+  container-network:
+    driver: bridge
 
 volumes:
   pg-data:
